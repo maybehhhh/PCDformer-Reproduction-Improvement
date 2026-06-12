@@ -1,0 +1,24 @@
+Setting:
+RFA_traffic_96_192_PCDformer_custom_ftM_sl96_ll0_pl192_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_routesparsemax_hd512_rv1_ra1_ebtimeF_dtTrue_PCDformer_RFA_0
+Use GPU: cuda:0
+Loading checkpoint: ./checkpoints/RFA_traffic_96_192_PCDformer_custom_ftM_sl96_ll0_pl192_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_routesparsemax_hd512_rv1_ra1_ebtimeF_dtTrue_PCDformer_RFA_0/checkpoint.pth
+test 3317
+batch 50/830 | mse_so_far=0.388238, mae_so_far=0.253503
+batch 100/830 | mse_so_far=0.367092, mae_so_far=0.252321
+batch 150/830 | mse_so_far=0.390173, mae_so_far=0.263844
+batch 200/830 | mse_so_far=0.412004, mae_so_far=0.274387
+batch 250/830 | mse_so_far=0.405859, mae_so_far=0.272348
+batch 300/830 | mse_so_far=0.412675, mae_so_far=0.275925
+batch 350/830 | mse_so_far=0.413215, mae_so_far=0.280134
+batch 400/830 | mse_so_far=0.404105, mae_so_far=0.277896
+batch 450/830 | mse_so_far=0.404914, mae_so_far=0.278313
+batch 500/830 | mse_so_far=0.398191, mae_so_far=0.277305
+batch 550/830 | mse_so_far=0.411035, mae_so_far=0.283530
+batch 600/830 | mse_so_far=0.412665, mae_so_far=0.283896
+batch 650/830 | mse_so_far=0.425994, mae_so_far=0.291076
+batch 700/830 | mse_so_far=0.436429, mae_so_far=0.294204
+batch 750/830 | mse_so_far=0.431922, mae_so_far=0.292926
+batch 800/830 | mse_so_far=0.437009, mae_so_far=0.295591
+======================================
+STREAM TEST RESULT | mse:0.440548229757352, mae:0.29947476136868145
+======================================

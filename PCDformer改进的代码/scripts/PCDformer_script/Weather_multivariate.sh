@@ -1,0 +1,9 @@
+export CUDA_VISIBLE_DEVICES=0
+
+# Autoformer-style long-horizon setting used by the paper's weather comparison table.
+# Put weather.csv under ./dataset/weather/ before running.
+
+python -u run.py --is_training 1 --root_path ./dataset/weather/ --data_path weather.csv --model_id PCDformer_weather_96_96 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 96 --e_layers 2 --d_layers 1 --enc_in 21 --dec_in 21 --c_out 21 --d_model 256 --d_ff 1024 --n_heads 8 --moving_avg 25 --top_k 1 --dropout 0.05 --batch_size 32 --learning_rate 0.00010 --train_epochs 10 --patience 3 --des PCDformer --itr 1
+python -u run.py --is_training 1 --root_path ./dataset/weather/ --data_path weather.csv --model_id PCDformer_weather_96_192 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 192 --e_layers 2 --d_layers 1 --enc_in 21 --dec_in 21 --c_out 21 --d_model 256 --d_ff 1024 --n_heads 8 --moving_avg 25 --top_k 1 --dropout 0.05 --batch_size 32 --learning_rate 0.00005 --train_epochs 10 --patience 3 --des PCDformer --itr 1
+python -u run.py --is_training 1 --root_path ./dataset/weather/ --data_path weather.csv --model_id PCDformer_weather_96_336 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 336 --e_layers 2 --d_layers 1 --enc_in 21 --dec_in 21 --c_out 21 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 25 --top_k 1 --dropout 0.025 --batch_size 64 --learning_rate 0.00005 --train_epochs 10 --patience 3 --des PCDformer --itr 1
+python -u run.py --is_training 1 --root_path ./dataset/weather/ --data_path weather.csv --model_id PCDformer_weather_96_720 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 720 --e_layers 2 --d_layers 1 --enc_in 21 --dec_in 21 --c_out 21 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 25 --top_k 1 --dropout 0.01 --batch_size 256 --learning_rate 0.000009 --train_epochs 10 --patience 3 --des PCDformer --itr 1
