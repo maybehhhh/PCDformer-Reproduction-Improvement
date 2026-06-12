@@ -1,0 +1,116 @@
+============================================================
+Start: 04_original_traffic_96_96
+Work dir: PCDformer-Autoformer-paper-aligned
+Log file: run_logs/04_original_traffic_96_96.log
+Time: 2026-06-02 22:11:58
+============================================================
+python -u run.py --is_training 1 --root_path ./dataset/traffic/ --data_path traffic.csv --model_id PCDformer_traffic_96_96 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 96 --e_layers 2 --d_layers 1 --enc_in 862 --dec_in 862 --c_out 862 --d_model 256 --d_ff 1024 --n_heads 8 --moving_avg 25 --top_k 1 --dropout 0.20 --batch_size 16 --learning_rate 0.00020 --train_epochs 10 --patience 3 --des PCDformer --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='PCDformer_traffic_96_96', model='PCDformer', data='custom', root_path='./dataset/traffic/', data_path='traffic.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, bucket_size=4, n_hashes=4, enc_in=862, dec_in=862, c_out=862, d_model=256, n_heads=8, e_layers=2, d_layers=1, d_ff=1024, moving_avg=25, factor=1, top_k=1, distil=True, dropout=0.2, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=16, patience=3, learning_rate=0.0002, des='PCDformer', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : PCDformer_traffic_96_96_PCDformer_custom_ftM_sl96_ll0_pl96_dm256_nh8_el2_dl1_df1024_fc1_ebtimeF_dtTrue_PCDformer_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 12089
+val 1661
+test 3413
+	iters: 100, epoch: 1 | loss: 0.4355124
+	speed: 0.2172s/iter; left time: 1618.3572s
+	iters: 200, epoch: 1 | loss: 0.4303956
+	speed: 0.2107s/iter; left time: 1548.5565s
+	iters: 300, epoch: 1 | loss: 0.3826143
+	speed: 0.2110s/iter; left time: 1530.0010s
+	iters: 400, epoch: 1 | loss: 0.3302831
+	speed: 0.2119s/iter; left time: 1514.9441s
+	iters: 500, epoch: 1 | loss: 0.3655260
+	speed: 0.2126s/iter; left time: 1498.7208s
+	iters: 600, epoch: 1 | loss: 0.3328316
+	speed: 0.2131s/iter; left time: 1481.4156s
+	iters: 700, epoch: 1 | loss: 0.3237428
+	speed: 0.2125s/iter; left time: 1455.7829s
+Epoch: 1 cost time: 160.19996619224548
+Epoch: 1, Steps: 755 | Train Loss: 0.4035887 Vali Loss: 0.5800455 Test Loss: 0.7553062
+Validation loss decreased (inf --> 0.580046).  Saving model ...
+Updating learning rate to 0.0002
+	iters: 100, epoch: 2 | loss: 0.3500642
+	speed: 0.6329s/iter; left time: 4237.8904s
+	iters: 200, epoch: 2 | loss: 0.3147232
+	speed: 0.2123s/iter; left time: 1400.3231s
+	iters: 300, epoch: 2 | loss: 0.2989292
+	speed: 0.2123s/iter; left time: 1378.8471s
+	iters: 400, epoch: 2 | loss: 0.2909285
+	speed: 0.2124s/iter; left time: 1358.5514s
+	iters: 500, epoch: 2 | loss: 0.2968801
+	speed: 0.2127s/iter; left time: 1338.9224s
+	iters: 600, epoch: 2 | loss: 0.2851948
+	speed: 0.2129s/iter; left time: 1319.1528s
+	iters: 700, epoch: 2 | loss: 0.2844406
+	speed: 0.2126s/iter; left time: 1296.2875s
+Epoch: 2 cost time: 160.43179273605347
+Epoch: 2, Steps: 755 | Train Loss: 0.2998124 Vali Loss: 0.5788689 Test Loss: 0.7413414
+Validation loss decreased (0.580046 --> 0.578869).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 3 | loss: 0.2672626
+	speed: 0.6250s/iter; left time: 3713.0653s
+	iters: 200, epoch: 3 | loss: 0.2656094
+	speed: 0.2127s/iter; left time: 1242.2947s
+	iters: 300, epoch: 3 | loss: 0.2598719
+	speed: 0.2128s/iter; left time: 1221.8580s
+	iters: 400, epoch: 3 | loss: 0.2610998
+	speed: 0.2129s/iter; left time: 1200.8218s
+	iters: 500, epoch: 3 | loss: 0.2852234
+	speed: 0.2126s/iter; left time: 1177.8677s
+	iters: 600, epoch: 3 | loss: 0.2552460
+	speed: 0.2124s/iter; left time: 1155.8983s
+	iters: 700, epoch: 3 | loss: 0.2621973
+	speed: 0.2125s/iter; left time: 1134.8631s
+Epoch: 3 cost time: 160.5317325592041
+Epoch: 3, Steps: 755 | Train Loss: 0.2773765 Vali Loss: 0.6103234 Test Loss: 0.7974225
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 4 | loss: 0.2580294
+	speed: 0.6247s/iter; left time: 3239.8926s
+	iters: 200, epoch: 4 | loss: 0.2822512
+	speed: 0.2125s/iter; left time: 1080.6212s
+	iters: 300, epoch: 4 | loss: 0.3219360
+	speed: 0.2126s/iter; left time: 1060.0998s
+	iters: 400, epoch: 4 | loss: 0.2912322
+	speed: 0.2126s/iter; left time: 1038.7353s
+	iters: 500, epoch: 4 | loss: 0.2531587
+	speed: 0.2128s/iter; left time: 1018.5420s
+	iters: 600, epoch: 4 | loss: 0.2940486
+	speed: 0.2126s/iter; left time: 996.3946s
+	iters: 700, epoch: 4 | loss: 0.2917544
+	speed: 0.2127s/iter; left time: 975.3546s
+Epoch: 4 cost time: 160.53051829338074
+Epoch: 4, Steps: 755 | Train Loss: 0.2694932 Vali Loss: 0.6281193 Test Loss: 0.8533925
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 5 | loss: 0.2891477
+	speed: 0.6307s/iter; left time: 2794.8119s
+	iters: 200, epoch: 5 | loss: 0.2418177
+	speed: 0.2130s/iter; left time: 922.5893s
+	iters: 300, epoch: 5 | loss: 0.2567792
+	speed: 0.2122s/iter; left time: 897.7916s
+	iters: 400, epoch: 5 | loss: 0.2417407
+	speed: 0.2122s/iter; left time: 876.6129s
+	iters: 500, epoch: 5 | loss: 0.2842532
+	speed: 0.2121s/iter; left time: 855.1214s
+	iters: 600, epoch: 5 | loss: 0.2666268
+	speed: 0.2120s/iter; left time: 833.2732s
+	iters: 700, epoch: 5 | loss: 0.2759912
+	speed: 0.2122s/iter; left time: 813.0611s
+Epoch: 5 cost time: 160.29629778862
+Epoch: 5, Steps: 755 | Train Loss: 0.2660435 Vali Loss: 0.6305318 Test Loss: 0.8515567
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : PCDformer_traffic_96_96_PCDformer_custom_ftM_sl96_ll0_pl96_dm256_nh8_el2_dl1_df1024_fc1_ebtimeF_dtTrue_PCDformer_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 3413
+test shape: (3413, 96, 862) (3413, 96, 862)
+test shape: (3413, 96, 862) (3413, 96, 862)
+mse:0.742340624332428, mae:0.5133460760116577
+avg_infer_ms_per_seq:4.981925, throughput_seq_per_sec:200.725611
+
+============================================================
+Finished: 04_original_traffic_96_96
+End time: 2026-06-02 22:28:38
+============================================================

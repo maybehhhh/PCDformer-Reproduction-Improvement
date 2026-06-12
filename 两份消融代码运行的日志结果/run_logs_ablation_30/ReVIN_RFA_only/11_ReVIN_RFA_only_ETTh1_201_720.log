@@ -1,0 +1,68 @@
+============================================================
+Start: 11_ReVIN_RFA_only_ETTh1_201_720
+Work dir: /hy-tmp/PCDformer_ablation_02_ReVIN_RFA_only_code
+Log file: /hy-tmp/run_logs_ablation_30/ReVIN_RFA_only/11_ReVIN_RFA_only_ETTh1_201_720.log
+Time: 2026-06-05 16:03:54
+============================================================
+python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/ETT-small/ --data_path ETTh1.csv --model_id ReVIN_RFA_only_ETTh1_201_720 --model PCDformer --data ETTh1 --features M --seq_len 201 --label_len 0 --pred_len 720 --e_layers 2 --d_layers 1 --enc_in 7 --dec_in 7 --c_out 7 --d_model 1024 --d_ff 4096 --n_heads 8 --moving_avg 45 --top_k 2 --use_revin 1 --use_residual_adapter 1 --adapter_gate_init -4.0 --dropout 0.50 --batch_size 64 --learning_rate 0.000015 --train_epochs 10 --patience 3 --des ReVIN_RFA_only --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='ReVIN_RFA_only_ETTh1_201_720', model='PCDformer', data='ETTh1', root_path='/hy-tmp/PCDformer创新4/dataset/ETT-small/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=201, label_len=0, pred_len=720, bucket_size=4, n_hashes=4, enc_in=7, dec_in=7, c_out=7, d_model=1024, n_heads=8, e_layers=2, d_layers=1, d_ff=4096, moving_avg=45, factor=1, top_k=2, use_revin=1, revin_eps=1e-05, use_residual_adapter=1, adapter_gate_init=-4.0, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=64, patience=3, learning_rate=1.5e-05, des='ReVIN_RFA_only', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : ReVIN_RFA_only_ETTh1_201_720_PCDformer_ETTh1_ftM_sl201_ll0_pl720_dm1024_nh8_el2_dl1_df4096_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7720
+val 2161
+test 2161
+	iters: 100, epoch: 1 | loss: 0.7490703
+	speed: 0.0608s/iter; left time: 66.9124s
+Epoch: 1 cost time: 6.589740991592407
+Epoch: 1, Steps: 120 | Train Loss: 0.8021500 Vali Loss: 1.5873767 Test Loss: 0.5727201
+Validation loss decreased (inf --> 1.587377).  Saving model ...
+Updating learning rate to 1.5e-05
+	iters: 100, epoch: 2 | loss: 0.6293214
+	speed: 0.0807s/iter; left time: 79.1519s
+Epoch: 2 cost time: 6.18911337852478
+Epoch: 2, Steps: 120 | Train Loss: 0.7122268 Vali Loss: 1.5342492 Test Loss: 0.5331306
+Validation loss decreased (1.587377 --> 1.534249).  Saving model ...
+Updating learning rate to 7.5e-06
+	iters: 100, epoch: 3 | loss: 0.6263116
+	speed: 0.0823s/iter; left time: 70.8713s
+Epoch: 3 cost time: 6.2155725955963135
+Epoch: 3, Steps: 120 | Train Loss: 0.6884718 Vali Loss: 1.5126253 Test Loss: 0.5165368
+Validation loss decreased (1.534249 --> 1.512625).  Saving model ...
+Updating learning rate to 3.75e-06
+	iters: 100, epoch: 4 | loss: 0.7551209
+	speed: 0.0812s/iter; left time: 60.1809s
+Epoch: 4 cost time: 6.253943920135498
+Epoch: 4, Steps: 120 | Train Loss: 0.6791286 Vali Loss: 1.5019577 Test Loss: 0.5084630
+Validation loss decreased (1.512625 --> 1.501958).  Saving model ...
+Updating learning rate to 1.875e-06
+	iters: 100, epoch: 5 | loss: 0.6448930
+	speed: 0.0821s/iter; left time: 50.9796s
+Epoch: 5 cost time: 6.288455486297607
+Epoch: 5, Steps: 120 | Train Loss: 0.6748302 Vali Loss: 1.5042191 Test Loss: 0.5083616
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 9.375e-07
+	iters: 100, epoch: 6 | loss: 0.6259537
+	speed: 0.0772s/iter; left time: 38.6839s
+Epoch: 6 cost time: 6.142611265182495
+Epoch: 6, Steps: 120 | Train Loss: 0.6736941 Vali Loss: 1.5032315 Test Loss: 0.5072311
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 4.6875e-07
+	iters: 100, epoch: 7 | loss: 0.6890595
+	speed: 0.0779s/iter; left time: 29.6830s
+Epoch: 7 cost time: 6.2355217933654785
+Epoch: 7, Steps: 120 | Train Loss: 0.6727237 Vali Loss: 1.5033830 Test Loss: 0.5066054
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ReVIN_RFA_only_ETTh1_201_720_PCDformer_ETTh1_ftM_sl201_ll0_pl720_dm1024_nh8_el2_dl1_df4096_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+test shape: (2161, 720, 7) (2161, 720, 7)
+test shape: (2161, 720, 7) (2161, 720, 7)
+mse:0.507496178150177, mae:0.4959796369075775
+
+============================================================
+Finished: 11_ReVIN_RFA_only_ETTh1_201_720
+End time: 2026-06-05 16:04:57
+============================================================
+

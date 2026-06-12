@@ -1,0 +1,66 @@
+============================================================
+Start: 06_ACR_only_ETTh1_201_168
+Work dir: /hy-tmp/PCDformer_ablation_01_ACR_only_code
+Log file: /hy-tmp/run_logs_ablation_30/ACR_only/06_ACR_only_ETTh1_201_168.log
+Time: 2026-06-05 01:59:33
+============================================================
+python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/ETT-small/ --data_path ETTh1.csv --model_id ACR_only_ETTh1_201_168 --model PCDformer --data ETTh1 --features M --seq_len 201 --label_len 0 --pred_len 168 --e_layers 2 --d_layers 1 --enc_in 7 --dec_in 7 --c_out 7 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 45 --top_k 2 --attention_type acr --core_num 0 --route_activation softmax --dropout 0.50 --batch_size 32 --learning_rate 0.00015 --train_epochs 10 --patience 3 --des ACR_only --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='ACR_only_ETTh1_201_168', model='PCDformer', data='ETTh1', root_path='/hy-tmp/PCDformer创新4/dataset/ETT-small/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=201, label_len=0, pred_len=168, bucket_size=4, n_hashes=4, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=45, factor=1, top_k=2, attention_type='acr', core_num=0, route_activation='softmax', distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.00015, des='ACR_only', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : ACR_only_ETTh1_201_168_PCDformer_ETTh1_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_ebtimeF_dtTrue_ACR_only_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8272
+val 2713
+test 2713
+	iters: 100, epoch: 1 | loss: 0.6501870
+	speed: 0.0580s/iter; left time: 143.8537s
+	iters: 200, epoch: 1 | loss: 0.4588023
+	speed: 0.0517s/iter; left time: 123.0139s
+Epoch: 1 cost time: 13.475971937179565
+Epoch: 1, Steps: 258 | Train Loss: 0.6252207 Vali Loss: 0.8802383 Test Loss: 0.4750704
+Validation loss decreased (inf --> 0.880238).  Saving model ...
+Updating learning rate to 0.00015
+	iters: 100, epoch: 2 | loss: 0.4361787
+	speed: 0.1115s/iter; left time: 247.7688s
+	iters: 200, epoch: 2 | loss: 0.4190145
+	speed: 0.0531s/iter; left time: 112.7248s
+Epoch: 2 cost time: 13.50757622718811
+Epoch: 2, Steps: 258 | Train Loss: 0.4482190 Vali Loss: 0.8673860 Test Loss: 0.4744033
+Validation loss decreased (0.880238 --> 0.867386).  Saving model ...
+Updating learning rate to 7.5e-05
+	iters: 100, epoch: 3 | loss: 0.4747843
+	speed: 0.1151s/iter; left time: 226.1947s
+	iters: 200, epoch: 3 | loss: 0.3874808
+	speed: 0.0510s/iter; left time: 95.1603s
+Epoch: 3 cost time: 13.110805034637451
+Epoch: 3, Steps: 258 | Train Loss: 0.4187613 Vali Loss: 0.9174058 Test Loss: 0.4807189
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.75e-05
+	iters: 100, epoch: 4 | loss: 0.4110861
+	speed: 0.0891s/iter; left time: 152.1642s
+	iters: 200, epoch: 4 | loss: 0.3956969
+	speed: 0.0303s/iter; left time: 48.6998s
+Epoch: 4 cost time: 7.811459302902222
+Epoch: 4, Steps: 258 | Train Loss: 0.4094588 Vali Loss: 0.8932638 Test Loss: 0.4622929
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.875e-05
+	iters: 100, epoch: 5 | loss: 0.3711193
+	speed: 0.0774s/iter; left time: 112.1644s
+	iters: 200, epoch: 5 | loss: 0.3523295
+	speed: 0.0307s/iter; left time: 41.3916s
+Epoch: 5 cost time: 7.887592077255249
+Epoch: 5, Steps: 258 | Train Loss: 0.4049149 Vali Loss: 0.9060782 Test Loss: 0.4625057
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ACR_only_ETTh1_201_168_PCDformer_ETTh1_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_ebtimeF_dtTrue_ACR_only_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2713
+test shape: (2713, 168, 7) (2713, 168, 7)
+test shape: (2713, 168, 7) (2713, 168, 7)
+mse:0.47393134236335754, mae:0.47107604146003723
+
+============================================================
+Finished: 06_ACR_only_ETTh1_201_168
+End time: 2026-06-05 02:00:51
+============================================================
+

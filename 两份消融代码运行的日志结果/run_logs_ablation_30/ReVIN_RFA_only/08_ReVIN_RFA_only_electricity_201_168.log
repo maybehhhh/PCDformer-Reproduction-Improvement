@@ -1,0 +1,152 @@
+============================================================
+Start: 08_ReVIN_RFA_only_electricity_201_168
+Work dir: /hy-tmp/PCDformer_ablation_02_ReVIN_RFA_only_code
+Log file: /hy-tmp/run_logs_ablation_30/ReVIN_RFA_only/08_ReVIN_RFA_only_electricity_201_168.log
+Time: 2026-06-05 04:50:51
+============================================================
+python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/electricity/ --data_path electricity.csv --model_id ReVIN_RFA_only_electricity_201_168 --model PCDformer --data custom --features M --seq_len 201 --label_len 0 --pred_len 168 --e_layers 2 --d_layers 1 --enc_in 321 --dec_in 321 --c_out 321 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 45 --top_k 1 --use_revin 1 --use_residual_adapter 1 --adapter_gate_init -4.0 --dropout 0.05 --batch_size 32 --learning_rate 0.00015 --train_epochs 10 --patience 3 --des ReVIN_RFA_only --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='ReVIN_RFA_only_electricity_201_168', model='PCDformer', data='custom', root_path='/hy-tmp/PCDformer创新4/dataset/electricity/', data_path='electricity.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=201, label_len=0, pred_len=168, bucket_size=4, n_hashes=4, enc_in=321, dec_in=321, c_out=321, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=45, factor=1, top_k=1, use_revin=1, revin_eps=1e-05, use_residual_adapter=1, adapter_gate_init=-4.0, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.00015, des='ReVIN_RFA_only', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : ReVIN_RFA_only_electricity_201_168_PCDformer_custom_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 18044
+val 2465
+test 5093
+	iters: 100, epoch: 1 | loss: 0.2137489
+	speed: 0.2156s/iter; left time: 1192.5617s
+	iters: 200, epoch: 1 | loss: 0.1814027
+	speed: 0.2071s/iter; left time: 1124.8003s
+	iters: 300, epoch: 1 | loss: 0.1780544
+	speed: 0.2071s/iter; left time: 1103.8995s
+	iters: 400, epoch: 1 | loss: 0.1753033
+	speed: 0.2071s/iter; left time: 1083.2981s
+	iters: 500, epoch: 1 | loss: 0.1612656
+	speed: 0.2076s/iter; left time: 1065.2491s
+Epoch: 1 cost time: 117.03441643714905
+Epoch: 1, Steps: 563 | Train Loss: 0.1974435 Vali Loss: 0.1401620 Test Loss: 0.1658732
+Validation loss decreased (inf --> 0.140162).  Saving model ...
+Updating learning rate to 0.00015
+	iters: 100, epoch: 2 | loss: 0.1454147
+	speed: 0.5629s/iter; left time: 2796.6266s
+	iters: 200, epoch: 2 | loss: 0.1609942
+	speed: 0.2074s/iter; left time: 1009.7086s
+	iters: 300, epoch: 2 | loss: 0.1633063
+	speed: 0.2069s/iter; left time: 986.5650s
+	iters: 400, epoch: 2 | loss: 0.1626803
+	speed: 0.2069s/iter; left time: 965.5789s
+	iters: 500, epoch: 2 | loss: 0.1373881
+	speed: 0.2068s/iter; left time: 944.8428s
+Epoch: 2 cost time: 116.48282647132874
+Epoch: 2, Steps: 563 | Train Loss: 0.1550369 Vali Loss: 0.1386188 Test Loss: 0.1636108
+Validation loss decreased (0.140162 --> 0.138619).  Saving model ...
+Updating learning rate to 7.5e-05
+	iters: 100, epoch: 3 | loss: 0.1441745
+	speed: 0.5408s/iter; left time: 2382.3169s
+	iters: 200, epoch: 3 | loss: 0.1403982
+	speed: 0.2069s/iter; left time: 890.8729s
+	iters: 300, epoch: 3 | loss: 0.1516703
+	speed: 0.2070s/iter; left time: 870.3157s
+	iters: 400, epoch: 3 | loss: 0.1414761
+	speed: 0.2068s/iter; left time: 848.9944s
+	iters: 500, epoch: 3 | loss: 0.1405267
+	speed: 0.2071s/iter; left time: 829.2569s
+Epoch: 3 cost time: 116.42104601860046
+Epoch: 3, Steps: 563 | Train Loss: 0.1456001 Vali Loss: 0.1350718 Test Loss: 0.1592247
+Validation loss decreased (0.138619 --> 0.135072).  Saving model ...
+Updating learning rate to 3.75e-05
+	iters: 100, epoch: 4 | loss: 0.1567649
+	speed: 0.5390s/iter; left time: 2070.7528s
+	iters: 200, epoch: 4 | loss: 0.1344837
+	speed: 0.2068s/iter; left time: 773.8011s
+	iters: 300, epoch: 4 | loss: 0.1441643
+	speed: 0.2069s/iter; left time: 753.6408s
+	iters: 400, epoch: 4 | loss: 0.1380393
+	speed: 0.2068s/iter; left time: 732.6500s
+	iters: 500, epoch: 4 | loss: 0.1347438
+	speed: 0.2070s/iter; left time: 712.3899s
+Epoch: 4 cost time: 116.42194485664368
+Epoch: 4, Steps: 563 | Train Loss: 0.1417365 Vali Loss: 0.1349048 Test Loss: 0.1576164
+Validation loss decreased (0.135072 --> 0.134905).  Saving model ...
+Updating learning rate to 1.875e-05
+	iters: 100, epoch: 5 | loss: 0.1346564
+	speed: 0.5344s/iter; left time: 1752.2610s
+	iters: 200, epoch: 5 | loss: 0.1564502
+	speed: 0.2061s/iter; left time: 655.1026s
+	iters: 300, epoch: 5 | loss: 0.1523469
+	speed: 0.2063s/iter; left time: 635.1810s
+	iters: 400, epoch: 5 | loss: 0.1540274
+	speed: 0.2065s/iter; left time: 615.0468s
+	iters: 500, epoch: 5 | loss: 0.1352842
+	speed: 0.2063s/iter; left time: 593.8359s
+Epoch: 5 cost time: 116.03689908981323
+Epoch: 5, Steps: 563 | Train Loss: 0.1396832 Vali Loss: 0.1353066 Test Loss: 0.1576869
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 9.375e-06
+	iters: 100, epoch: 6 | loss: 0.1347361
+	speed: 0.5301s/iter; left time: 1439.7552s
+	iters: 200, epoch: 6 | loss: 0.1341887
+	speed: 0.2062s/iter; left time: 539.3282s
+	iters: 300, epoch: 6 | loss: 0.1359150
+	speed: 0.2062s/iter; left time: 518.8317s
+	iters: 400, epoch: 6 | loss: 0.1419327
+	speed: 0.2062s/iter; left time: 498.0977s
+	iters: 500, epoch: 6 | loss: 0.1426353
+	speed: 0.2061s/iter; left time: 477.3359s
+Epoch: 6 cost time: 115.99587798118591
+Epoch: 6, Steps: 563 | Train Loss: 0.1385542 Vali Loss: 0.1337350 Test Loss: 0.1570978
+Validation loss decreased (0.134905 --> 0.133735).  Saving model ...
+Updating learning rate to 4.6875e-06
+	iters: 100, epoch: 7 | loss: 0.1412434
+	speed: 0.5353s/iter; left time: 1152.5284s
+	iters: 200, epoch: 7 | loss: 0.1414017
+	speed: 0.2066s/iter; left time: 424.0653s
+	iters: 300, epoch: 7 | loss: 0.1373491
+	speed: 0.2062s/iter; left time: 402.7790s
+	iters: 400, epoch: 7 | loss: 0.1321088
+	speed: 0.2063s/iter; left time: 382.3606s
+	iters: 500, epoch: 7 | loss: 0.1493391
+	speed: 0.2062s/iter; left time: 361.4095s
+Epoch: 7 cost time: 116.09085297584534
+Epoch: 7, Steps: 563 | Train Loss: 0.1379878 Vali Loss: 0.1344431 Test Loss: 0.1575006
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.34375e-06
+	iters: 100, epoch: 8 | loss: 0.1517451
+	speed: 0.5324s/iter; left time: 846.4875s
+	iters: 200, epoch: 8 | loss: 0.1299282
+	speed: 0.2062s/iter; left time: 307.2283s
+	iters: 300, epoch: 8 | loss: 0.1380251
+	speed: 0.2062s/iter; left time: 286.6541s
+	iters: 400, epoch: 8 | loss: 0.1346847
+	speed: 0.2062s/iter; left time: 266.0492s
+	iters: 500, epoch: 8 | loss: 0.1358830
+	speed: 0.2062s/iter; left time: 245.3555s
+Epoch: 8 cost time: 116.08121180534363
+Epoch: 8, Steps: 563 | Train Loss: 0.1376980 Vali Loss: 0.1339809 Test Loss: 0.1568590
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.171875e-06
+	iters: 100, epoch: 9 | loss: 0.1394015
+	speed: 0.5362s/iter; left time: 550.7118s
+	iters: 200, epoch: 9 | loss: 0.1349040
+	speed: 0.2063s/iter; left time: 191.2174s
+	iters: 300, epoch: 9 | loss: 0.1373094
+	speed: 0.2062s/iter; left time: 170.5538s
+	iters: 400, epoch: 9 | loss: 0.1232126
+	speed: 0.2063s/iter; left time: 149.9493s
+	iters: 500, epoch: 9 | loss: 0.1264272
+	speed: 0.2062s/iter; left time: 129.2778s
+Epoch: 9 cost time: 116.04990816116333
+Epoch: 9, Steps: 563 | Train Loss: 0.1375772 Vali Loss: 0.1342540 Test Loss: 0.1571665
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ReVIN_RFA_only_electricity_201_168_PCDformer_custom_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 5093
+test shape: (5093, 168, 321) (5093, 168, 321)
+test shape: (5093, 168, 321) (5093, 168, 321)
+mse:0.15573814511299133, mae:0.2509942948818207
+
+============================================================
+Finished: 08_ReVIN_RFA_only_electricity_201_168
+End time: 2026-06-05 05:11:56
+============================================================
+

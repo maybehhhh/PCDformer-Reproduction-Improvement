@@ -1,0 +1,116 @@
+============================================================
+Start: 09_ACR_only_traffic_96_192
+Work dir: /hy-tmp/PCDformer_ablation_01_ACR_only_code
+Log file: /hy-tmp/run_logs_ablation_30/ACR_only/09_ACR_only_traffic_96_192.log
+Time: 2026-06-05 02:23:21
+============================================================
+python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/traffic/ --data_path traffic.csv --model_id ACR_only_traffic_96_192 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 192 --e_layers 2 --d_layers 1 --enc_in 862 --dec_in 862 --c_out 862 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 25 --top_k 1 --attention_type acr --core_num 0 --route_activation softmax --dropout 0.20 --batch_size 16 --learning_rate 0.00020 --train_epochs 10 --patience 3 --des ACR_only --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='ACR_only_traffic_96_192', model='PCDformer', data='custom', root_path='/hy-tmp/PCDformer创新4/dataset/traffic/', data_path='traffic.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=192, bucket_size=4, n_hashes=4, enc_in=862, dec_in=862, c_out=862, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, top_k=1, attention_type='acr', core_num=0, route_activation='softmax', distil=True, dropout=0.2, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=16, patience=3, learning_rate=0.0002, des='ACR_only', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : ACR_only_traffic_96_192_PCDformer_custom_ftM_sl96_ll0_pl192_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_ebtimeF_dtTrue_ACR_only_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 11993
+val 1565
+test 3317
+	iters: 100, epoch: 1 | loss: 0.3927944
+	speed: 0.2316s/iter; left time: 1711.4054s
+	iters: 200, epoch: 1 | loss: 0.3390087
+	speed: 0.2235s/iter; left time: 1629.4032s
+	iters: 300, epoch: 1 | loss: 0.3277039
+	speed: 0.2238s/iter; left time: 1609.5379s
+	iters: 400, epoch: 1 | loss: 0.3080854
+	speed: 0.2239s/iter; left time: 1587.4523s
+	iters: 500, epoch: 1 | loss: 0.3223414
+	speed: 0.2238s/iter; left time: 1564.7859s
+	iters: 600, epoch: 1 | loss: 0.2882484
+	speed: 0.2238s/iter; left time: 1542.1193s
+	iters: 700, epoch: 1 | loss: 0.2678306
+	speed: 0.2238s/iter; left time: 1520.0966s
+Epoch: 1 cost time: 167.93584156036377
+Epoch: 1, Steps: 749 | Train Loss: 0.3426444 Vali Loss: 0.4836843 Test Loss: 0.6438923
+Validation loss decreased (inf --> 0.483684).  Saving model ...
+Updating learning rate to 0.0002
+	iters: 100, epoch: 2 | loss: 0.2887720
+	speed: 0.6163s/iter; left time: 4093.5920s
+	iters: 200, epoch: 2 | loss: 0.2888236
+	speed: 0.2232s/iter; left time: 1460.3134s
+	iters: 300, epoch: 2 | loss: 0.2779413
+	speed: 0.2230s/iter; left time: 1436.8817s
+	iters: 400, epoch: 2 | loss: 0.2730106
+	speed: 0.2231s/iter; left time: 1414.8992s
+	iters: 500, epoch: 2 | loss: 0.2808516
+	speed: 0.2231s/iter; left time: 1392.8797s
+	iters: 600, epoch: 2 | loss: 0.2659392
+	speed: 0.2230s/iter; left time: 1369.5884s
+	iters: 700, epoch: 2 | loss: 0.2605130
+	speed: 0.2232s/iter; left time: 1348.3500s
+Epoch: 2 cost time: 167.09490370750427
+Epoch: 2, Steps: 749 | Train Loss: 0.2761733 Vali Loss: 0.4733886 Test Loss: 0.6143214
+Validation loss decreased (0.483684 --> 0.473389).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 3 | loss: 0.2600527
+	speed: 0.6156s/iter; left time: 3627.9942s
+	iters: 200, epoch: 3 | loss: 0.2595188
+	speed: 0.2228s/iter; left time: 1290.6268s
+	iters: 300, epoch: 3 | loss: 0.2437638
+	speed: 0.2227s/iter; left time: 1267.7499s
+	iters: 400, epoch: 3 | loss: 0.2607124
+	speed: 0.2229s/iter; left time: 1246.7098s
+	iters: 500, epoch: 3 | loss: 0.2555893
+	speed: 0.2227s/iter; left time: 1223.2702s
+	iters: 600, epoch: 3 | loss: 0.2760842
+	speed: 0.2226s/iter; left time: 1200.6118s
+	iters: 700, epoch: 3 | loss: 0.2523410
+	speed: 0.2227s/iter; left time: 1178.7068s
+Epoch: 3 cost time: 166.83401012420654
+Epoch: 3, Steps: 749 | Train Loss: 0.2592697 Vali Loss: 0.4750201 Test Loss: 0.6207334
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 4 | loss: 0.2649136
+	speed: 0.6110s/iter; left time: 3143.1221s
+	iters: 200, epoch: 4 | loss: 0.2394764
+	speed: 0.2227s/iter; left time: 1123.4722s
+	iters: 300, epoch: 4 | loss: 0.2591383
+	speed: 0.2226s/iter; left time: 1100.7452s
+	iters: 400, epoch: 4 | loss: 0.2535285
+	speed: 0.2226s/iter; left time: 1078.5075s
+	iters: 500, epoch: 4 | loss: 0.2662954
+	speed: 0.2227s/iter; left time: 1056.3905s
+	iters: 600, epoch: 4 | loss: 0.2394002
+	speed: 0.2227s/iter; left time: 1034.4316s
+	iters: 700, epoch: 4 | loss: 0.2587015
+	speed: 0.2227s/iter; left time: 1012.0281s
+Epoch: 4 cost time: 166.78593635559082
+Epoch: 4, Steps: 749 | Train Loss: 0.2517640 Vali Loss: 0.4806933 Test Loss: 0.6319507
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 5 | loss: 0.2563472
+	speed: 0.6192s/iter; left time: 2721.1714s
+	iters: 200, epoch: 5 | loss: 0.2588388
+	speed: 0.2228s/iter; left time: 956.8773s
+	iters: 300, epoch: 5 | loss: 0.2352147
+	speed: 0.2227s/iter; left time: 934.2047s
+	iters: 400, epoch: 5 | loss: 0.2591395
+	speed: 0.2229s/iter; left time: 912.7218s
+	iters: 500, epoch: 5 | loss: 0.2587368
+	speed: 0.2231s/iter; left time: 891.3144s
+	iters: 600, epoch: 5 | loss: 0.2397048
+	speed: 0.2234s/iter; left time: 870.1548s
+	iters: 700, epoch: 5 | loss: 0.2464805
+	speed: 0.2233s/iter; left time: 847.2419s
+Epoch: 5 cost time: 167.0722427368164
+Epoch: 5, Steps: 749 | Train Loss: 0.2480078 Vali Loss: 0.4901560 Test Loss: 0.6385341
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ACR_only_traffic_96_192_PCDformer_custom_ftM_sl96_ll0_pl192_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_ebtimeF_dtTrue_ACR_only_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 3317
+test shape: (3317, 192, 862) (3317, 192, 862)
+test shape: (3317, 192, 862) (3317, 192, 862)
+run_ablation_10.sh: line 80:  2462 Killed                  python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/traffic/ --data_path traffic.csv --model_id ACR_only_traffic_96_192 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 192 --e_layers 2 --d_layers 1 --enc_in 862 --dec_in 862 --c_out 862 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 25 --top_k 1 --attention_type acr --core_num 0 --route_activation softmax --dropout 0.20 --batch_size 16 --learning_rate 0.00020 --train_epochs 10 --patience 3 --des ACR_only --itr 1 --num_workers 0
+
+============================================================
+Failed: 09_ACR_only_traffic_96_192, exit code: 137
+End time: 2026-06-05 02:40:21
+============================================================
+

@@ -1,0 +1,82 @@
+============================================================
+Start: 15_ACR_only_weather_96_336
+Work dir: /hy-tmp/PCDformer_ablation_01_ACR_only_code
+Log file: /hy-tmp/run_logs_ablation_30/ACR_only/15_ACR_only_weather_96_336.log
+Time: 2026-06-05 03:33:48
+============================================================
+python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/weather/ --data_path weather.csv --model_id ACR_only_weather_96_336 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 336 --e_layers 2 --d_layers 1 --enc_in 21 --dec_in 21 --c_out 21 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 25 --top_k 1 --attention_type acr --core_num 0 --route_activation softmax --dropout 0.025 --batch_size 64 --learning_rate 0.00005 --train_epochs 10 --patience 3 --des ACR_only --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='ACR_only_weather_96_336', model='PCDformer', data='custom', root_path='/hy-tmp/PCDformer创新4/dataset/weather/', data_path='weather.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=336, bucket_size=4, n_hashes=4, enc_in=21, dec_in=21, c_out=21, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, top_k=1, attention_type='acr', core_num=0, route_activation='softmax', distil=True, dropout=0.025, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=64, patience=3, learning_rate=5e-05, des='ACR_only', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : ACR_only_weather_96_336_PCDformer_custom_ftM_sl96_ll0_pl336_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_ebtimeF_dtTrue_ACR_only_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36456
+val 4935
+test 10204
+	iters: 100, epoch: 1 | loss: 0.5170361
+	speed: 0.0600s/iter; left time: 335.6763s
+	iters: 200, epoch: 1 | loss: 0.7329685
+	speed: 0.0540s/iter; left time: 296.6334s
+	iters: 300, epoch: 1 | loss: 0.5405154
+	speed: 0.0531s/iter; left time: 286.4742s
+	iters: 400, epoch: 1 | loss: 0.6184819
+	speed: 0.0524s/iter; left time: 277.3407s
+	iters: 500, epoch: 1 | loss: 0.5038315
+	speed: 0.0527s/iter; left time: 273.7350s
+Epoch: 1 cost time: 30.315663814544678
+Epoch: 1, Steps: 569 | Train Loss: 0.5895202 Vali Loss: 0.5520019 Test Loss: 0.2761388
+Validation loss decreased (inf --> 0.552002).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 2 | loss: 0.5145812
+	speed: 0.1496s/iter; left time: 751.2624s
+	iters: 200, epoch: 2 | loss: 0.4183127
+	speed: 0.0530s/iter; left time: 260.7225s
+	iters: 300, epoch: 2 | loss: 0.4216869
+	speed: 0.0530s/iter; left time: 255.7302s
+	iters: 400, epoch: 2 | loss: 0.3922420
+	speed: 0.0533s/iter; left time: 251.6709s
+	iters: 500, epoch: 2 | loss: 0.5021426
+	speed: 0.0530s/iter; left time: 245.0644s
+Epoch: 2 cost time: 30.06157088279724
+Epoch: 2, Steps: 569 | Train Loss: 0.5216008 Vali Loss: 0.5605150 Test Loss: 0.2826071
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 3 | loss: 0.3600167
+	speed: 0.1504s/iter; left time: 669.7893s
+	iters: 200, epoch: 3 | loss: 0.4163157
+	speed: 0.0531s/iter; left time: 231.1975s
+	iters: 300, epoch: 3 | loss: 0.5623417
+	speed: 0.0519s/iter; left time: 220.8653s
+	iters: 400, epoch: 3 | loss: 0.3554091
+	speed: 0.0534s/iter; left time: 221.7474s
+	iters: 500, epoch: 3 | loss: 0.3759698
+	speed: 0.0536s/iter; left time: 217.0923s
+Epoch: 3 cost time: 30.079837322235107
+Epoch: 3, Steps: 569 | Train Loss: 0.4983089 Vali Loss: 0.5626444 Test Loss: 0.2813689
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 4 | loss: 0.4864586
+	speed: 0.1542s/iter; left time: 598.7460s
+	iters: 200, epoch: 4 | loss: 0.4856312
+	speed: 0.0527s/iter; left time: 199.2963s
+	iters: 300, epoch: 4 | loss: 0.4199148
+	speed: 0.0526s/iter; left time: 193.6488s
+	iters: 400, epoch: 4 | loss: 0.6240216
+	speed: 0.0527s/iter; left time: 188.7477s
+	iters: 500, epoch: 4 | loss: 0.3919504
+	speed: 0.0525s/iter; left time: 183.0213s
+Epoch: 4 cost time: 29.897074937820435
+Epoch: 4, Steps: 569 | Train Loss: 0.4849952 Vali Loss: 0.5632915 Test Loss: 0.2853329
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ACR_only_weather_96_336_PCDformer_custom_ftM_sl96_ll0_pl336_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_ebtimeF_dtTrue_ACR_only_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 10204
+test shape: (10204, 336, 21) (10204, 336, 21)
+test shape: (10204, 336, 21) (10204, 336, 21)
+mse:0.2767189145088196, mae:0.32479819655418396
+
+============================================================
+Finished: 15_ACR_only_weather_96_336
+End time: 2026-06-05 03:36:24
+============================================================
+

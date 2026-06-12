@@ -1,0 +1,58 @@
+============================================================
+Start: 01_ReVIN_RFA_only_ETTh1_201_336
+Work dir: /hy-tmp/PCDformer_ablation_02_ReVIN_RFA_only_code
+Log file: /hy-tmp/run_logs_ablation_30/ReVIN_RFA_only/01_ReVIN_RFA_only_ETTh1_201_336.log
+Time: 2026-06-05 03:36:25
+============================================================
+python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/ETT-small/ --data_path ETTh1.csv --model_id ReVIN_RFA_only_ETTh1_201_336 --model PCDformer --data ETTh1 --features M --seq_len 201 --label_len 0 --pred_len 336 --e_layers 2 --d_layers 1 --enc_in 7 --dec_in 7 --c_out 7 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 45 --top_k 2 --use_revin 1 --use_residual_adapter 1 --adapter_gate_init -4.0 --dropout 0.50 --batch_size 32 --learning_rate 0.00015 --train_epochs 10 --patience 3 --des ReVIN_RFA_only --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='ReVIN_RFA_only_ETTh1_201_336', model='PCDformer', data='ETTh1', root_path='/hy-tmp/PCDformer创新4/dataset/ETT-small/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=201, label_len=0, pred_len=336, bucket_size=4, n_hashes=4, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=45, factor=1, top_k=2, use_revin=1, revin_eps=1e-05, use_residual_adapter=1, adapter_gate_init=-4.0, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.00015, des='ReVIN_RFA_only', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : ReVIN_RFA_only_ETTh1_201_336_PCDformer_ETTh1_ftM_sl201_ll0_pl336_dm512_nh8_el2_dl1_df2048_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8104
+val 2545
+test 2545
+	iters: 100, epoch: 1 | loss: 0.5428846
+	speed: 0.0549s/iter; left time: 133.4246s
+	iters: 200, epoch: 1 | loss: 0.6429393
+	speed: 0.0508s/iter; left time: 118.3953s
+Epoch: 1 cost time: 12.773221969604492
+Epoch: 1, Steps: 253 | Train Loss: 0.5574215 Vali Loss: 1.2364521 Test Loss: 0.4769228
+Validation loss decreased (inf --> 1.236452).  Saving model ...
+Updating learning rate to 0.00015
+	iters: 100, epoch: 2 | loss: 0.4854032
+	speed: 0.1089s/iter; left time: 237.1213s
+	iters: 200, epoch: 2 | loss: 0.4860360
+	speed: 0.0519s/iter; left time: 107.8760s
+Epoch: 2 cost time: 12.959541082382202
+Epoch: 2, Steps: 253 | Train Loss: 0.4956810 Vali Loss: 1.2482601 Test Loss: 0.4805802
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 7.5e-05
+	iters: 100, epoch: 3 | loss: 0.4949681
+	speed: 0.1081s/iter; left time: 208.0173s
+	iters: 200, epoch: 3 | loss: 0.4965123
+	speed: 0.0514s/iter; left time: 93.8539s
+Epoch: 3 cost time: 12.899752616882324
+Epoch: 3, Steps: 253 | Train Loss: 0.4796732 Vali Loss: 1.2942350 Test Loss: 0.4832899
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 3.75e-05
+	iters: 100, epoch: 4 | loss: 0.4731041
+	speed: 0.1033s/iter; left time: 172.6548s
+	iters: 200, epoch: 4 | loss: 0.4615238
+	speed: 0.0500s/iter; left time: 78.6560s
+Epoch: 4 cost time: 12.288190841674805
+Epoch: 4, Steps: 253 | Train Loss: 0.4724762 Vali Loss: 1.3113180 Test Loss: 0.4827783
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ReVIN_RFA_only_ETTh1_201_336_PCDformer_ETTh1_ftM_sl201_ll0_pl336_dm512_nh8_el2_dl1_df2048_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2545
+test shape: (2545, 336, 7) (2545, 336, 7)
+test shape: (2545, 336, 7) (2545, 336, 7)
+mse:0.47645437717437744, mae:0.453609824180603
+
+============================================================
+Finished: 01_ReVIN_RFA_only_ETTh1_201_336
+End time: 2026-06-05 03:37:34
+============================================================
+

@@ -1,0 +1,86 @@
+============================================================
+Start: 10_ReVIN_RFA_only_weather_96_720
+Work dir: /hy-tmp/PCDformer_ablation_02_ReVIN_RFA_only_code
+Log file: /hy-tmp/run_logs_ablation_30/ReVIN_RFA_only/10_ReVIN_RFA_only_weather_96_720.log
+Time: 2026-06-05 16:01:25
+============================================================
+python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/weather/ --data_path weather.csv --model_id ReVIN_RFA_only_weather_96_720 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 720 --e_layers 2 --d_layers 1 --enc_in 21 --dec_in 21 --c_out 21 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 25 --top_k 1 --use_revin 1 --use_residual_adapter 1 --adapter_gate_init -4.0 --dropout 0.01 --batch_size 256 --learning_rate 0.000009 --train_epochs 10 --patience 3 --des ReVIN_RFA_only --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='ReVIN_RFA_only_weather_96_720', model='PCDformer', data='custom', root_path='/hy-tmp/PCDformer创新4/dataset/weather/', data_path='weather.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=720, bucket_size=4, n_hashes=4, enc_in=21, dec_in=21, c_out=21, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, top_k=1, use_revin=1, revin_eps=1e-05, use_residual_adapter=1, adapter_gate_init=-4.0, distil=True, dropout=0.01, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=256, patience=3, learning_rate=9e-06, des='ReVIN_RFA_only', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : ReVIN_RFA_only_weather_96_720_PCDformer_custom_ftM_sl96_ll0_pl720_dm512_nh8_el2_dl1_df2048_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36072
+val 4551
+test 9820
+	iters: 100, epoch: 1 | loss: 0.8588842
+	speed: 0.0849s/iter; left time: 110.4041s
+Epoch: 1 cost time: 10.874768257141113
+Epoch: 1, Steps: 140 | Train Loss: 0.8954272 Vali Loss: 0.8395936 Test Loss: 0.3861673
+Validation loss decreased (inf --> 0.839594).  Saving model ...
+Updating learning rate to 9e-06
+	iters: 100, epoch: 2 | loss: 0.8130816
+	speed: 0.1368s/iter; left time: 158.8450s
+Epoch: 2 cost time: 10.568630933761597
+Epoch: 2, Steps: 140 | Train Loss: 0.7875893 Vali Loss: 0.7829261 Test Loss: 0.3771937
+Validation loss decreased (0.839594 --> 0.782926).  Saving model ...
+Updating learning rate to 4.5e-06
+	iters: 100, epoch: 3 | loss: 0.8072874
+	speed: 0.1369s/iter; left time: 139.8220s
+Epoch: 3 cost time: 10.530666828155518
+Epoch: 3, Steps: 140 | Train Loss: 0.7519311 Vali Loss: 0.7712836 Test Loss: 0.3751473
+Validation loss decreased (0.782926 --> 0.771284).  Saving model ...
+Updating learning rate to 2.25e-06
+	iters: 100, epoch: 4 | loss: 0.7466266
+	speed: 0.1364s/iter; left time: 120.1318s
+Epoch: 4 cost time: 10.565163612365723
+Epoch: 4, Steps: 140 | Train Loss: 0.7413549 Vali Loss: 0.7650456 Test Loss: 0.3746866
+Validation loss decreased (0.771284 --> 0.765046).  Saving model ...
+Updating learning rate to 1.125e-06
+	iters: 100, epoch: 5 | loss: 0.6797645
+	speed: 0.1359s/iter; left time: 100.7229s
+Epoch: 5 cost time: 10.556356191635132
+Epoch: 5, Steps: 140 | Train Loss: 0.7363097 Vali Loss: 0.7653483 Test Loss: 0.3743365
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5.625e-07
+	iters: 100, epoch: 6 | loss: 0.7232929
+	speed: 0.1357s/iter; left time: 81.5289s
+Epoch: 6 cost time: 10.645482063293457
+Epoch: 6, Steps: 140 | Train Loss: 0.7343184 Vali Loss: 0.7656305 Test Loss: 0.3740927
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.8125e-07
+	iters: 100, epoch: 7 | loss: 0.7135636
+	speed: 0.1370s/iter; left time: 63.1782s
+Epoch: 7 cost time: 10.675253868103027
+Epoch: 7, Steps: 140 | Train Loss: 0.7331329 Vali Loss: 0.7626237 Test Loss: 0.3740019
+Validation loss decreased (0.765046 --> 0.762624).  Saving model ...
+Updating learning rate to 1.40625e-07
+	iters: 100, epoch: 8 | loss: 0.7221218
+	speed: 0.1373s/iter; left time: 44.0586s
+Epoch: 8 cost time: 10.616497993469238
+Epoch: 8, Steps: 140 | Train Loss: 0.7334380 Vali Loss: 0.7658795 Test Loss: 0.3739688
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 7.03125e-08
+	iters: 100, epoch: 9 | loss: 0.7133760
+	speed: 0.1369s/iter; left time: 24.7852s
+Epoch: 9 cost time: 10.568297863006592
+Epoch: 9, Steps: 140 | Train Loss: 0.7322069 Vali Loss: 0.7624320 Test Loss: 0.3739505
+Validation loss decreased (0.762624 --> 0.762432).  Saving model ...
+Updating learning rate to 3.515625e-08
+	iters: 100, epoch: 10 | loss: 0.6660056
+	speed: 0.1364s/iter; left time: 5.5930s
+Epoch: 10 cost time: 10.538243293762207
+Epoch: 10, Steps: 140 | Train Loss: 0.7327315 Vali Loss: 0.7609247 Test Loss: 0.3739422
+Validation loss decreased (0.762432 --> 0.760925).  Saving model ...
+Updating learning rate to 1.7578125e-08
+>>>>>>>testing : ReVIN_RFA_only_weather_96_720_PCDformer_custom_ftM_sl96_ll0_pl720_dm512_nh8_el2_dl1_df2048_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 9820
+test shape: (9820, 720, 21) (9820, 720, 21)
+test shape: (9820, 720, 21) (9820, 720, 21)
+mse:0.3677211105823517, mae:0.3587943911552429
+
+============================================================
+Finished: 10_ReVIN_RFA_only_weather_96_720
+End time: 2026-06-05 16:03:54
+============================================================
+

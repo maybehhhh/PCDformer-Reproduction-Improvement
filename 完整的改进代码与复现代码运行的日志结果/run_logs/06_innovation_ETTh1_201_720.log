@@ -1,0 +1,74 @@
+============================================================
+Start: 06_innovation_ETTh1_201_720
+Work dir: PCDformer创新4
+Log file: run_logs/06_innovation_ETTh1_201_720.log
+Time: 2026-06-03 18:20:10
+============================================================
+python -u run.py --is_training 1 --root_path ./dataset/ETT-small/ --data_path ETTh1.csv --model_id SPACR_ETTh1_201_720 --model PCDformer --data ETTh1 --features M --seq_len 201 --label_len 0 --pred_len 720 --e_layers 2 --d_layers 1 --enc_in 7 --dec_in 7 --c_out 7 --d_model 1024 --d_ff 4096 --n_heads 8 --moving_avg 45 --top_k 2 --attention_type acr --core_num 0 --route_activation sparsemax --hybrid_direct_threshold 0 --use_revin 1 --use_residual_adapter 1 --adapter_gate_init -4.0 --dropout 0.50 --batch_size 64 --learning_rate 0.000015 --train_epochs 10 --patience 3 --des PCDformer_SPACR --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='SPACR_ETTh1_201_720', model='PCDformer', data='ETTh1', root_path='./dataset/ETT-small/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=201, label_len=0, pred_len=720, bucket_size=4, n_hashes=4, enc_in=7, dec_in=7, c_out=7, d_model=1024, n_heads=8, e_layers=2, d_layers=1, d_ff=4096, moving_avg=45, factor=1, top_k=2, attention_type='acr', core_num=0, route_activation='sparsemax', hybrid_direct_threshold=0, use_revin=1, revin_eps=1e-05, use_residual_adapter=1, adapter_gate_init=-4.0, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=64, patience=3, learning_rate=1.5e-05, des='PCDformer_SPACR', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : SPACR_ETTh1_201_720_PCDformer_ETTh1_ftM_sl201_ll0_pl720_dm1024_nh8_el2_dl1_df4096_fc1_attnacr_core0_routesparsemax_hd0_rv1_ra1_ebtimeF_dtTrue_PCDformer_SPACR_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7720
+val 2161
+test 2161
+	iters: 100, epoch: 1 | loss: 0.7777268
+	speed: 0.0568s/iter; left time: 62.5180s
+Epoch: 1 cost time: 6.0753538608551025
+Epoch: 1, Steps: 120 | Train Loss: 0.8128549 Vali Loss: 1.5986611 Test Loss: 0.5918143
+Validation loss decreased (inf --> 1.598661).  Saving model ...
+Updating learning rate to 1.5e-05
+	iters: 100, epoch: 2 | loss: 0.6755572
+	speed: 0.0804s/iter; left time: 78.8701s
+Epoch: 2 cost time: 6.315050363540649
+Epoch: 2, Steps: 120 | Train Loss: 0.7255920 Vali Loss: 1.5357342 Test Loss: 0.5380488
+Validation loss decreased (1.598661 --> 1.535734).  Saving model ...
+Updating learning rate to 7.5e-06
+	iters: 100, epoch: 3 | loss: 0.7134283
+	speed: 0.0831s/iter; left time: 71.5703s
+Epoch: 3 cost time: 6.304026365280151
+Epoch: 3, Steps: 120 | Train Loss: 0.7006594 Vali Loss: 1.5200168 Test Loss: 0.5226935
+Validation loss decreased (1.535734 --> 1.520017).  Saving model ...
+Updating learning rate to 3.75e-06
+	iters: 100, epoch: 4 | loss: 0.6893575
+	speed: 0.0858s/iter; left time: 63.6029s
+Epoch: 4 cost time: 6.835334062576294
+Epoch: 4, Steps: 120 | Train Loss: 0.6917820 Vali Loss: 1.5147845 Test Loss: 0.5151078
+Validation loss decreased (1.520017 --> 1.514784).  Saving model ...
+Updating learning rate to 1.875e-06
+	iters: 100, epoch: 5 | loss: 0.7282392
+	speed: 0.0931s/iter; left time: 57.7850s
+Epoch: 5 cost time: 7.326693534851074
+Epoch: 5, Steps: 120 | Train Loss: 0.6871309 Vali Loss: 1.5096090 Test Loss: 0.5129747
+Validation loss decreased (1.514784 --> 1.509609).  Saving model ...
+Updating learning rate to 9.375e-07
+	iters: 100, epoch: 6 | loss: 0.7340910
+	speed: 0.0831s/iter; left time: 41.6434s
+Epoch: 6 cost time: 6.245795011520386
+Epoch: 6, Steps: 120 | Train Loss: 0.6852807 Vali Loss: 1.5118178 Test Loss: 0.5117981
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 4.6875e-07
+	iters: 100, epoch: 7 | loss: 0.7072521
+	speed: 0.0763s/iter; left time: 29.0693s
+Epoch: 7 cost time: 6.136469125747681
+Epoch: 7, Steps: 120 | Train Loss: 0.6845200 Vali Loss: 1.5154601 Test Loss: 0.5112317
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.34375e-07
+	iters: 100, epoch: 8 | loss: 0.7103413
+	speed: 0.0841s/iter; left time: 21.9422s
+Epoch: 8 cost time: 6.997070550918579
+Epoch: 8, Steps: 120 | Train Loss: 0.6839086 Vali Loss: 1.5112220 Test Loss: 0.5108778
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : SPACR_ETTh1_201_720_PCDformer_ETTh1_ftM_sl201_ll0_pl720_dm1024_nh8_el2_dl1_df4096_fc1_attnacr_core0_routesparsemax_hd0_rv1_ra1_ebtimeF_dtTrue_PCDformer_SPACR_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+test shape: (2161, 720, 7) (2161, 720, 7)
+test shape: (2161, 720, 7) (2161, 720, 7)
+mse:0.5121159553527832, mae:0.4977017641067505
+avg_infer_ms_per_seq:0.163515, throughput_seq_per_sec:6115.661084
+
+============================================================
+Finished: 06_innovation_ETTh1_201_720
+End time: 2026-06-03 18:21:23
+============================================================

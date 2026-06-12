@@ -1,0 +1,150 @@
+============================================================
+Start: 10_innovation_weather_96_336
+Work dir: PCDformer创新4
+Log file: run_logs/10_innovation_weather_96_336.log
+Time: 2026-06-03 19:04:37
+============================================================
+python -u run.py --is_training 1 --root_path ./dataset/weather/ --data_path weather.csv --model_id SPACR_weather_96_336 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 336 --e_layers 2 --d_layers 1 --enc_in 21 --dec_in 21 --c_out 21 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 25 --top_k 1 --attention_type acr --core_num 0 --route_activation sparsemax --hybrid_direct_threshold 0 --use_revin 1 --use_residual_adapter 1 --adapter_gate_init -4.0 --dropout 0.025 --batch_size 64 --learning_rate 0.00005 --train_epochs 10 --patience 3 --des PCDformer_SPACR --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='SPACR_weather_96_336', model='PCDformer', data='custom', root_path='./dataset/weather/', data_path='weather.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=336, bucket_size=4, n_hashes=4, enc_in=21, dec_in=21, c_out=21, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, top_k=1, attention_type='acr', core_num=0, route_activation='sparsemax', hybrid_direct_threshold=0, use_revin=1, revin_eps=1e-05, use_residual_adapter=1, adapter_gate_init=-4.0, distil=True, dropout=0.025, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=64, patience=3, learning_rate=5e-05, des='PCDformer_SPACR', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : SPACR_weather_96_336_PCDformer_custom_ftM_sl96_ll0_pl336_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_routesparsemax_hd0_rv1_ra1_ebtimeF_dtTrue_PCDformer_SPACR_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36456
+val 4935
+test 10204
+	iters: 100, epoch: 1 | loss: 1.1510836
+	speed: 0.0610s/iter; left time: 341.3081s
+	iters: 200, epoch: 1 | loss: 0.6312951
+	speed: 0.0528s/iter; left time: 290.0023s
+	iters: 300, epoch: 1 | loss: 1.0804843
+	speed: 0.0531s/iter; left time: 286.2321s
+	iters: 400, epoch: 1 | loss: 0.4888398
+	speed: 0.0534s/iter; left time: 282.5629s
+	iters: 500, epoch: 1 | loss: 0.5281390
+	speed: 0.0531s/iter; left time: 275.4946s
+Epoch: 1 cost time: 30.492985248565674
+Epoch: 1, Steps: 569 | Train Loss: 0.6365334 Vali Loss: 0.5998349 Test Loss: 0.2860749
+Validation loss decreased (inf --> 0.599835).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 2 | loss: 0.5829317
+	speed: 0.1517s/iter; left time: 761.7701s
+	iters: 200, epoch: 2 | loss: 0.5311542
+	speed: 0.0532s/iter; left time: 261.9918s
+	iters: 300, epoch: 2 | loss: 0.4727645
+	speed: 0.0531s/iter; left time: 256.0274s
+	iters: 400, epoch: 2 | loss: 0.5888478
+	speed: 0.0533s/iter; left time: 251.8667s
+	iters: 500, epoch: 2 | loss: 0.4666412
+	speed: 0.0530s/iter; left time: 245.1167s
+Epoch: 2 cost time: 30.088072776794434
+Epoch: 2, Steps: 569 | Train Loss: 0.5897905 Vali Loss: 0.5808097 Test Loss: 0.2798974
+Validation loss decreased (0.599835 --> 0.580810).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 3 | loss: 0.6274961
+	speed: 0.1492s/iter; left time: 664.4289s
+	iters: 200, epoch: 3 | loss: 0.5641111
+	speed: 0.0553s/iter; left time: 240.9055s
+	iters: 300, epoch: 3 | loss: 0.6507142
+	speed: 0.0552s/iter; left time: 234.8080s
+	iters: 400, epoch: 3 | loss: 0.4806090
+	speed: 0.0552s/iter; left time: 229.2543s
+	iters: 500, epoch: 3 | loss: 0.6481452
+	speed: 0.0550s/iter; left time: 223.1019s
+Epoch: 3 cost time: 31.29987907409668
+Epoch: 3, Steps: 569 | Train Loss: 0.5684841 Vali Loss: 0.5683888 Test Loss: 0.2773142
+Validation loss decreased (0.580810 --> 0.568389).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 4 | loss: 0.5325584
+	speed: 0.1512s/iter; left time: 587.0997s
+	iters: 200, epoch: 4 | loss: 0.4963955
+	speed: 0.0552s/iter; left time: 208.7931s
+	iters: 300, epoch: 4 | loss: 0.7877960
+	speed: 0.0548s/iter; left time: 201.7468s
+	iters: 400, epoch: 4 | loss: 0.6989651
+	speed: 0.0552s/iter; left time: 197.7255s
+	iters: 500, epoch: 4 | loss: 0.4858145
+	speed: 0.0552s/iter; left time: 192.3524s
+Epoch: 4 cost time: 31.340006828308105
+Epoch: 4, Steps: 569 | Train Loss: 0.5585379 Vali Loss: 0.5688311 Test Loss: 0.2768933
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 5 | loss: 0.5036082
+	speed: 0.1488s/iter; left time: 493.4238s
+	iters: 200, epoch: 5 | loss: 0.5175133
+	speed: 0.0545s/iter; left time: 175.1921s
+	iters: 300, epoch: 5 | loss: 0.5912945
+	speed: 0.0541s/iter; left time: 168.4067s
+	iters: 400, epoch: 5 | loss: 0.5761332
+	speed: 0.0554s/iter; left time: 166.9753s
+	iters: 500, epoch: 5 | loss: 0.5660092
+	speed: 0.0555s/iter; left time: 161.7492s
+Epoch: 5 cost time: 31.170203685760498
+Epoch: 5, Steps: 569 | Train Loss: 0.5532893 Vali Loss: 0.5671438 Test Loss: 0.2767294
+Validation loss decreased (0.568389 --> 0.567144).  Saving model ...
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 6 | loss: 0.5483302
+	speed: 0.1499s/iter; left time: 411.7341s
+	iters: 200, epoch: 6 | loss: 0.4887314
+	speed: 0.0560s/iter; left time: 148.2269s
+	iters: 300, epoch: 6 | loss: 0.5042899
+	speed: 0.0552s/iter; left time: 140.5736s
+	iters: 400, epoch: 6 | loss: 0.6497137
+	speed: 0.0553s/iter; left time: 135.2330s
+	iters: 500, epoch: 6 | loss: 0.4674998
+	speed: 0.0554s/iter; left time: 130.0066s
+Epoch: 6 cost time: 31.389972925186157
+Epoch: 6, Steps: 569 | Train Loss: 0.5508807 Vali Loss: 0.5684364 Test Loss: 0.2765579
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 7 | loss: 0.5933149
+	speed: 0.1509s/iter; left time: 328.5279s
+	iters: 200, epoch: 7 | loss: 0.4856799
+	speed: 0.0553s/iter; left time: 114.9473s
+	iters: 300, epoch: 7 | loss: 0.6461322
+	speed: 0.0553s/iter; left time: 109.2879s
+	iters: 400, epoch: 7 | loss: 0.4599922
+	speed: 0.0553s/iter; left time: 103.8551s
+	iters: 500, epoch: 7 | loss: 0.4815435
+	speed: 0.0553s/iter; left time: 98.2500s
+Epoch: 7 cost time: 31.354002952575684
+Epoch: 7, Steps: 569 | Train Loss: 0.5496495 Vali Loss: 0.5686257 Test Loss: 0.2768229
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.8125e-07
+	iters: 100, epoch: 8 | loss: 0.6124438
+	speed: 0.1489s/iter; left time: 239.4288s
+	iters: 200, epoch: 8 | loss: 0.6061301
+	speed: 0.0553s/iter; left time: 83.4091s
+	iters: 300, epoch: 8 | loss: 0.4655842
+	speed: 0.0549s/iter; left time: 77.2860s
+	iters: 400, epoch: 8 | loss: 0.6401407
+	speed: 0.0547s/iter; left time: 71.4842s
+	iters: 500, epoch: 8 | loss: 0.6711086
+	speed: 0.0558s/iter; left time: 67.4399s
+Epoch: 8 cost time: 31.360795259475708
+Epoch: 8, Steps: 569 | Train Loss: 0.5487898 Vali Loss: 0.5682982 Test Loss: 0.2766565
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : SPACR_weather_96_336_PCDformer_custom_ftM_sl96_ll0_pl336_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_routesparsemax_hd0_rv1_ra1_ebtimeF_dtTrue_PCDformer_SPACR_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 10204
+test shape: (10204, 336, 21) (10204, 336, 21)
+test shape: (10204, 336, 21) (10204, 336, 21)
+mse:0.2768181562423706, mae:0.2984916865825653
+avg_infer_ms_per_seq:0.163274, throughput_seq_per_sec:6124.668658
+Traceback (most recent call last):
+  File "/hy-tmp/PCDformer创新4/run.py", line 187, in <module>
+    main()
+  File "/hy-tmp/PCDformer创新4/run.py", line 146, in main
+    exp.test(setting)
+  File "/hy-tmp/PCDformer创新4/exp/exp_main.py", line 283, in test
+    np.save(folder_path + 'true.npy', trues)
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/npyio.py", line 546, in save
+    format.write_array(fid, arr, allow_pickle=allow_pickle,
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/format.py", line 730, in write_array
+    array.tofile(fp)
+OSError: Not enough free space to write 287997696 bytes
+
+============================================================
+Failed: 10_innovation_weather_96_336, exit code: 1
+End time: 2026-06-03 19:09:43
+============================================================

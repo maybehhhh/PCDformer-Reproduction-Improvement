@@ -1,0 +1,82 @@
+============================================================
+Start: 07_ACR_only_ETTm1_201_288
+Work dir: /hy-tmp/PCDformer_ablation_01_ACR_only_code
+Log file: /hy-tmp/run_logs_ablation_30/ACR_only/07_ACR_only_ETTm1_201_288.log
+Time: 2026-06-05 02:00:51
+============================================================
+python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/ETT-small/ --data_path ETTm1.csv --model_id ACR_only_ETTm1_201_288 --model PCDformer --data ETTm1 --features M --seq_len 201 --label_len 0 --pred_len 288 --e_layers 2 --d_layers 1 --enc_in 7 --dec_in 7 --c_out 7 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 45 --top_k 1 --attention_type acr --core_num 0 --route_activation softmax --dropout 0.25 --batch_size 64 --learning_rate 0.00005 --train_epochs 10 --patience 3 --des ACR_only --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='ACR_only_ETTm1_201_288', model='PCDformer', data='ETTm1', root_path='/hy-tmp/PCDformer创新4/dataset/ETT-small/', data_path='ETTm1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=201, label_len=0, pred_len=288, bucket_size=4, n_hashes=4, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=45, factor=1, top_k=1, attention_type='acr', core_num=0, route_activation='softmax', distil=True, dropout=0.25, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=64, patience=3, learning_rate=5e-05, des='ACR_only', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : ACR_only_ETTm1_201_288_PCDformer_ETTm1_ftM_sl201_ll0_pl288_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_ebtimeF_dtTrue_ACR_only_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 34072
+val 11233
+test 11233
+	iters: 100, epoch: 1 | loss: 0.5317070
+	speed: 0.0579s/iter; left time: 302.3363s
+	iters: 200, epoch: 1 | loss: 0.4608215
+	speed: 0.0516s/iter; left time: 264.1641s
+	iters: 300, epoch: 1 | loss: 0.4033054
+	speed: 0.0514s/iter; left time: 258.2098s
+	iters: 400, epoch: 1 | loss: 0.3830440
+	speed: 0.0515s/iter; left time: 253.4818s
+	iters: 500, epoch: 1 | loss: 0.3630088
+	speed: 0.0509s/iter; left time: 245.4836s
+Epoch: 1 cost time: 27.44574522972107
+Epoch: 1, Steps: 532 | Train Loss: 0.4852975 Vali Loss: 0.6001896 Test Loss: 0.4082425
+Validation loss decreased (inf --> 0.600190).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 2 | loss: 0.3317901
+	speed: 0.1431s/iter; left time: 670.9762s
+	iters: 200, epoch: 2 | loss: 0.3477507
+	speed: 0.0502s/iter; left time: 230.2659s
+	iters: 300, epoch: 2 | loss: 0.3732238
+	speed: 0.0511s/iter; left time: 229.1781s
+	iters: 400, epoch: 2 | loss: 0.3431641
+	speed: 0.0508s/iter; left time: 222.8892s
+	iters: 500, epoch: 2 | loss: 0.3680227
+	speed: 0.0507s/iter; left time: 217.4794s
+Epoch: 2 cost time: 26.797680139541626
+Epoch: 2, Steps: 532 | Train Loss: 0.3620582 Vali Loss: 0.6143140 Test Loss: 0.4420837
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 3 | loss: 0.3429942
+	speed: 0.1390s/iter; left time: 577.9741s
+	iters: 200, epoch: 3 | loss: 0.3190010
+	speed: 0.0517s/iter; left time: 209.8218s
+	iters: 300, epoch: 3 | loss: 0.3173892
+	speed: 0.0527s/iter; left time: 208.4995s
+	iters: 400, epoch: 3 | loss: 0.3112554
+	speed: 0.0515s/iter; left time: 198.6891s
+	iters: 500, epoch: 3 | loss: 0.3766266
+	speed: 0.0513s/iter; left time: 192.9154s
+Epoch: 3 cost time: 27.328359365463257
+Epoch: 3, Steps: 532 | Train Loss: 0.3395274 Vali Loss: 0.6191601 Test Loss: 0.4476557
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 4 | loss: 0.3218626
+	speed: 0.1383s/iter; left time: 501.3970s
+	iters: 200, epoch: 4 | loss: 0.2840157
+	speed: 0.0513s/iter; left time: 180.9510s
+	iters: 300, epoch: 4 | loss: 0.3320540
+	speed: 0.0514s/iter; left time: 175.9857s
+	iters: 400, epoch: 4 | loss: 0.3171973
+	speed: 0.0512s/iter; left time: 170.0982s
+	iters: 500, epoch: 4 | loss: 0.3381089
+	speed: 0.0515s/iter; left time: 165.9634s
+Epoch: 4 cost time: 27.219093084335327
+Epoch: 4, Steps: 532 | Train Loss: 0.3301984 Vali Loss: 0.6250083 Test Loss: 0.4675950
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ACR_only_ETTm1_201_288_PCDformer_ETTm1_ftM_sl201_ll0_pl288_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_ebtimeF_dtTrue_ACR_only_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11233
+test shape: (11233, 288, 7) (11233, 288, 7)
+test shape: (11233, 288, 7) (11233, 288, 7)
+mse:0.4072709381580353, mae:0.43109774589538574
+
+============================================================
+Finished: 07_ACR_only_ETTm1_201_288
+End time: 2026-06-05 02:03:19
+============================================================
+

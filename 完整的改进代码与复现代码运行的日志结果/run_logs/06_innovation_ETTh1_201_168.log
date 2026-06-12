@@ -1,0 +1,66 @@
+============================================================
+Start: 06_innovation_ETTh1_201_168
+Work dir: PCDformer创新4
+Log file: run_logs/06_innovation_ETTh1_201_168.log
+Time: 2026-06-03 14:17:08
+============================================================
+python -u run.py --is_training 1 --root_path ./dataset/ETT-small/ --data_path ETTh1.csv --model_id SPACR_ETTh1_201_168 --model PCDformer --data ETTh1 --features M --seq_len 201 --label_len 0 --pred_len 168 --e_layers 2 --d_layers 1 --enc_in 7 --dec_in 7 --c_out 7 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 45 --top_k 2 --attention_type acr --core_num 0 --route_activation sparsemax --hybrid_direct_threshold 0 --use_revin 1 --use_residual_adapter 1 --adapter_gate_init -4.0 --dropout 0.50 --batch_size 32 --learning_rate 0.00015 --train_epochs 10 --patience 3 --des PCDformer_SPACR --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='SPACR_ETTh1_201_168', model='PCDformer', data='ETTh1', root_path='./dataset/ETT-small/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=201, label_len=0, pred_len=168, bucket_size=4, n_hashes=4, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=45, factor=1, top_k=2, attention_type='acr', core_num=0, route_activation='sparsemax', hybrid_direct_threshold=0, use_revin=1, revin_eps=1e-05, use_residual_adapter=1, adapter_gate_init=-4.0, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.00015, des='PCDformer_SPACR', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : SPACR_ETTh1_201_168_PCDformer_ETTh1_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_routesparsemax_hd0_rv1_ra1_ebtimeF_dtTrue_PCDformer_SPACR_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8272
+val 2713
+test 2713
+	iters: 100, epoch: 1 | loss: 0.4948245
+	speed: 0.0594s/iter; left time: 147.3193s
+	iters: 200, epoch: 1 | loss: 0.4587630
+	speed: 0.0530s/iter; left time: 126.1479s
+Epoch: 1 cost time: 13.832853078842163
+Epoch: 1, Steps: 258 | Train Loss: 0.4962351 Vali Loss: 0.9441442 Test Loss: 0.4644203
+Validation loss decreased (inf --> 0.944144).  Saving model ...
+Updating learning rate to 0.00015
+	iters: 100, epoch: 2 | loss: 0.4594335
+	speed: 0.1133s/iter; left time: 251.8601s
+	iters: 200, epoch: 2 | loss: 0.4162113
+	speed: 0.0535s/iter; left time: 113.5206s
+Epoch: 2 cost time: 13.659426212310791
+Epoch: 2, Steps: 258 | Train Loss: 0.4292512 Vali Loss: 0.9393827 Test Loss: 0.4458026
+Validation loss decreased (0.944144 --> 0.939383).  Saving model ...
+Updating learning rate to 7.5e-05
+	iters: 100, epoch: 3 | loss: 0.4064647
+	speed: 0.1161s/iter; left time: 228.2310s
+	iters: 200, epoch: 3 | loss: 0.4065346
+	speed: 0.0534s/iter; left time: 99.5657s
+Epoch: 3 cost time: 13.611490726470947
+Epoch: 3, Steps: 258 | Train Loss: 0.4124081 Vali Loss: 1.0047239 Test Loss: 0.4690409
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.75e-05
+	iters: 100, epoch: 4 | loss: 0.3618183
+	speed: 0.1116s/iter; left time: 190.4938s
+	iters: 200, epoch: 4 | loss: 0.4238026
+	speed: 0.0533s/iter; left time: 85.6780s
+Epoch: 4 cost time: 13.586898565292358
+Epoch: 4, Steps: 258 | Train Loss: 0.4038497 Vali Loss: 1.0167348 Test Loss: 0.4596511
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.875e-05
+	iters: 100, epoch: 5 | loss: 0.4162586
+	speed: 0.1109s/iter; left time: 160.6899s
+	iters: 200, epoch: 5 | loss: 0.3985994
+	speed: 0.0526s/iter; left time: 70.9219s
+Epoch: 5 cost time: 13.454658031463623
+Epoch: 5, Steps: 258 | Train Loss: 0.4000084 Vali Loss: 1.0236750 Test Loss: 0.4584584
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : SPACR_ETTh1_201_168_PCDformer_ETTh1_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_routesparsemax_hd0_rv1_ra1_ebtimeF_dtTrue_PCDformer_SPACR_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2713
+test shape: (2713, 168, 7) (2713, 168, 7)
+test shape: (2713, 168, 7) (2713, 168, 7)
+mse:0.44510725140571594, mae:0.4370746612548828
+avg_infer_ms_per_seq:0.330966, throughput_seq_per_sec:3021.461529
+
+============================================================
+Finished: 06_innovation_ETTh1_201_168
+End time: 2026-06-03 14:18:38
+============================================================

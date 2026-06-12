@@ -1,0 +1,66 @@
+============================================================
+Start: 06_ReVIN_RFA_only_ETTh1_201_168
+Work dir: /hy-tmp/PCDformer_ablation_02_ReVIN_RFA_only_code
+Log file: /hy-tmp/run_logs_ablation_30/ReVIN_RFA_only/06_ReVIN_RFA_only_ETTh1_201_168.log
+Time: 2026-06-05 04:43:39
+============================================================
+python -u run.py --is_training 1 --root_path /hy-tmp/PCDformer创新4/dataset/ETT-small/ --data_path ETTh1.csv --model_id ReVIN_RFA_only_ETTh1_201_168 --model PCDformer --data ETTh1 --features M --seq_len 201 --label_len 0 --pred_len 168 --e_layers 2 --d_layers 1 --enc_in 7 --dec_in 7 --c_out 7 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 45 --top_k 2 --use_revin 1 --use_residual_adapter 1 --adapter_gate_init -4.0 --dropout 0.50 --batch_size 32 --learning_rate 0.00015 --train_epochs 10 --patience 3 --des ReVIN_RFA_only --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='ReVIN_RFA_only_ETTh1_201_168', model='PCDformer', data='ETTh1', root_path='/hy-tmp/PCDformer创新4/dataset/ETT-small/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=201, label_len=0, pred_len=168, bucket_size=4, n_hashes=4, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=45, factor=1, top_k=2, use_revin=1, revin_eps=1e-05, use_residual_adapter=1, adapter_gate_init=-4.0, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.00015, des='ReVIN_RFA_only', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : ReVIN_RFA_only_ETTh1_201_168_PCDformer_ETTh1_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8272
+val 2713
+test 2713
+	iters: 100, epoch: 1 | loss: 0.5084490
+	speed: 0.0574s/iter; left time: 142.4106s
+	iters: 200, epoch: 1 | loss: 0.5141906
+	speed: 0.0514s/iter; left time: 122.3433s
+Epoch: 1 cost time: 13.10664176940918
+Epoch: 1, Steps: 258 | Train Loss: 0.4864921 Vali Loss: 0.9352658 Test Loss: 0.4430650
+Validation loss decreased (inf --> 0.935266).  Saving model ...
+Updating learning rate to 0.00015
+	iters: 100, epoch: 2 | loss: 0.3932844
+	speed: 0.1071s/iter; left time: 238.0394s
+	iters: 200, epoch: 2 | loss: 0.4014522
+	speed: 0.0490s/iter; left time: 103.9990s
+Epoch: 2 cost time: 12.282066583633423
+Epoch: 2, Steps: 258 | Train Loss: 0.4233713 Vali Loss: 0.9134806 Test Loss: 0.4336799
+Validation loss decreased (0.935266 --> 0.913481).  Saving model ...
+Updating learning rate to 7.5e-05
+	iters: 100, epoch: 3 | loss: 0.4288722
+	speed: 0.1060s/iter; left time: 208.3217s
+	iters: 200, epoch: 3 | loss: 0.3563572
+	speed: 0.0478s/iter; left time: 89.0729s
+Epoch: 3 cost time: 12.139052629470825
+Epoch: 3, Steps: 258 | Train Loss: 0.4062786 Vali Loss: 0.9301684 Test Loss: 0.4408662
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.75e-05
+	iters: 100, epoch: 4 | loss: 0.4196562
+	speed: 0.1046s/iter; left time: 178.5860s
+	iters: 200, epoch: 4 | loss: 0.4043320
+	speed: 0.0477s/iter; left time: 76.7224s
+Epoch: 4 cost time: 12.06771731376648
+Epoch: 4, Steps: 258 | Train Loss: 0.3980574 Vali Loss: 0.9559016 Test Loss: 0.4390684
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.875e-05
+	iters: 100, epoch: 5 | loss: 0.4072165
+	speed: 0.1049s/iter; left time: 151.9285s
+	iters: 200, epoch: 5 | loss: 0.4317448
+	speed: 0.0487s/iter; left time: 65.6871s
+Epoch: 5 cost time: 12.318408250808716
+Epoch: 5, Steps: 258 | Train Loss: 0.3939142 Vali Loss: 0.9599136 Test Loss: 0.4365346
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ReVIN_RFA_only_ETTh1_201_168_PCDformer_ETTh1_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_rv1_ra1_ebtimeF_dtTrue_ReVIN_RFA_only_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2713
+test shape: (2713, 168, 7) (2713, 168, 7)
+test shape: (2713, 168, 7) (2713, 168, 7)
+mse:0.43311864137649536, mae:0.43033698201179504
+
+============================================================
+Finished: 06_ReVIN_RFA_only_ETTh1_201_168
+End time: 2026-06-05 04:45:03
+============================================================
+

@@ -1,0 +1,86 @@
+============================================================
+Start: 10_innovation_weather_96_720
+Work dir: PCDformer创新4
+Log file: run_logs/10_innovation_weather_96_720.log
+Time: 2026-06-03 15:10:57
+============================================================
+python -u run.py --is_training 1 --root_path ./dataset/weather/ --data_path weather.csv --model_id SPACR_weather_96_720 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 720 --e_layers 2 --d_layers 1 --enc_in 21 --dec_in 21 --c_out 21 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 25 --top_k 1 --attention_type acr --core_num 0 --route_activation sparsemax --hybrid_direct_threshold 0 --use_revin 1 --use_residual_adapter 1 --adapter_gate_init -4.0 --dropout 0.01 --batch_size 256 --learning_rate 0.000009 --train_epochs 10 --patience 3 --des PCDformer_SPACR --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='SPACR_weather_96_720', model='PCDformer', data='custom', root_path='./dataset/weather/', data_path='weather.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=720, bucket_size=4, n_hashes=4, enc_in=21, dec_in=21, c_out=21, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, top_k=1, attention_type='acr', core_num=0, route_activation='sparsemax', hybrid_direct_threshold=0, use_revin=1, revin_eps=1e-05, use_residual_adapter=1, adapter_gate_init=-4.0, distil=True, dropout=0.01, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=256, patience=3, learning_rate=9e-06, des='PCDformer_SPACR', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : SPACR_weather_96_720_PCDformer_custom_ftM_sl96_ll0_pl720_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_routesparsemax_hd0_rv1_ra1_ebtimeF_dtTrue_PCDformer_SPACR_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36072
+val 4551
+test 9820
+	iters: 100, epoch: 1 | loss: 0.8363904
+	speed: 0.0977s/iter; left time: 127.0863s
+Epoch: 1 cost time: 12.775486707687378
+Epoch: 1, Steps: 140 | Train Loss: 0.8819711 Vali Loss: 0.8276248 Test Loss: 0.3852549
+Validation loss decreased (inf --> 0.827625).  Saving model ...
+Updating learning rate to 9e-06
+	iters: 100, epoch: 2 | loss: 0.7398589
+	speed: 0.1564s/iter; left time: 181.6253s
+Epoch: 2 cost time: 11.987488031387329
+Epoch: 2, Steps: 140 | Train Loss: 0.7778831 Vali Loss: 0.7737209 Test Loss: 0.3758299
+Validation loss decreased (0.827625 --> 0.773721).  Saving model ...
+Updating learning rate to 4.5e-06
+	iters: 100, epoch: 3 | loss: 0.7343950
+	speed: 0.1502s/iter; left time: 153.3143s
+Epoch: 3 cost time: 11.802875995635986
+Epoch: 3, Steps: 140 | Train Loss: 0.7464100 Vali Loss: 0.7660491 Test Loss: 0.3740455
+Validation loss decreased (0.773721 --> 0.766049).  Saving model ...
+Updating learning rate to 2.25e-06
+	iters: 100, epoch: 4 | loss: 0.7600107
+	speed: 0.1506s/iter; left time: 132.7152s
+Epoch: 4 cost time: 12.074716329574585
+Epoch: 4, Steps: 140 | Train Loss: 0.7369241 Vali Loss: 0.7640452 Test Loss: 0.3735172
+Validation loss decreased (0.766049 --> 0.764045).  Saving model ...
+Updating learning rate to 1.125e-06
+	iters: 100, epoch: 5 | loss: 0.7336017
+	speed: 0.1549s/iter; left time: 114.7741s
+Epoch: 5 cost time: 12.104196310043335
+Epoch: 5, Steps: 140 | Train Loss: 0.7328615 Vali Loss: 0.7603648 Test Loss: 0.3729880
+Validation loss decreased (0.764045 --> 0.760365).  Saving model ...
+Updating learning rate to 5.625e-07
+	iters: 100, epoch: 6 | loss: 0.7583615
+	speed: 0.1535s/iter; left time: 92.2567s
+Epoch: 6 cost time: 12.071019649505615
+Epoch: 6, Steps: 140 | Train Loss: 0.7303925 Vali Loss: 0.7587111 Test Loss: 0.3729724
+Validation loss decreased (0.760365 --> 0.758711).  Saving model ...
+Updating learning rate to 2.8125e-07
+	iters: 100, epoch: 7 | loss: 0.7939186
+	speed: 0.1517s/iter; left time: 69.9144s
+Epoch: 7 cost time: 12.091074705123901
+Epoch: 7, Steps: 140 | Train Loss: 0.7294609 Vali Loss: 0.7598442 Test Loss: 0.3728959
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.40625e-07
+	iters: 100, epoch: 8 | loss: 0.6973093
+	speed: 0.1513s/iter; left time: 48.5805s
+Epoch: 8 cost time: 12.049619674682617
+Epoch: 8, Steps: 140 | Train Loss: 0.7293122 Vali Loss: 0.7587320 Test Loss: 0.3728651
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.03125e-08
+	iters: 100, epoch: 9 | loss: 0.7002174
+	speed: 0.1508s/iter; left time: 27.2877s
+Epoch: 9 cost time: 12.108700513839722
+Epoch: 9, Steps: 140 | Train Loss: 0.7287754 Vali Loss: 0.7562953 Test Loss: 0.3728468
+Validation loss decreased (0.758711 --> 0.756295).  Saving model ...
+Updating learning rate to 3.515625e-08
+	iters: 100, epoch: 10 | loss: 0.7169948
+	speed: 0.1538s/iter; left time: 6.3038s
+Epoch: 10 cost time: 12.086588621139526
+Epoch: 10, Steps: 140 | Train Loss: 0.7293991 Vali Loss: 0.7563953 Test Loss: 0.3728385
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.7578125e-08
+>>>>>>>testing : SPACR_weather_96_720_PCDformer_custom_ftM_sl96_ll0_pl720_dm512_nh8_el2_dl1_df2048_fc1_attnacr_core0_routesparsemax_hd0_rv1_ra1_ebtimeF_dtTrue_PCDformer_SPACR_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 9820
+test shape: (9820, 720, 21) (9820, 720, 21)
+test shape: (9820, 720, 21) (9820, 720, 21)
+mse:0.36661428213119507, mae:0.35777053236961365
+avg_infer_ms_per_seq:0.082443, throughput_seq_per_sec:12129.558579
+
+============================================================
+Finished: 10_innovation_weather_96_720
+End time: 2026-06-03 15:13:42
+============================================================

@@ -1,0 +1,66 @@
+============================================================
+Start: 01_original_ETTh1_201_168
+Work dir: PCDformer-Autoformer-paper-aligned
+Log file: run_logs/01_original_ETTh1_201_168.log
+Time: 2026-06-03 13:33:13
+============================================================
+python -u run.py --is_training 1 --root_path ./dataset/ETT-small/ --data_path ETTh1.csv --model_id PCDformer_ETTh1_201_168 --model PCDformer --data ETTh1 --features M --seq_len 201 --label_len 0 --pred_len 168 --e_layers 2 --d_layers 1 --enc_in 7 --dec_in 7 --c_out 7 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 45 --top_k 2 --dropout 0.50 --batch_size 32 --learning_rate 0.00015 --train_epochs 10 --patience 3 --des PCDformer --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='PCDformer_ETTh1_201_168', model='PCDformer', data='ETTh1', root_path='./dataset/ETT-small/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=201, label_len=0, pred_len=168, bucket_size=4, n_hashes=4, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=45, factor=1, top_k=2, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.00015, des='PCDformer', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : PCDformer_ETTh1_201_168_PCDformer_ETTh1_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_PCDformer_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8272
+val 2713
+test 2713
+	iters: 100, epoch: 1 | loss: 0.5789169
+	speed: 0.0476s/iter; left time: 118.0912s
+	iters: 200, epoch: 1 | loss: 0.4709843
+	speed: 0.0378s/iter; left time: 90.0815s
+Epoch: 1 cost time: 9.962612390518188
+Epoch: 1, Steps: 258 | Train Loss: 0.6130862 Vali Loss: 0.8481759 Test Loss: 0.4374599
+Validation loss decreased (inf --> 0.848176).  Saving model ...
+Updating learning rate to 0.00015
+	iters: 100, epoch: 2 | loss: 0.5574214
+	speed: 0.0972s/iter; left time: 216.0699s
+	iters: 200, epoch: 2 | loss: 0.4364913
+	speed: 0.0387s/iter; left time: 82.1401s
+Epoch: 2 cost time: 10.003763914108276
+Epoch: 2, Steps: 258 | Train Loss: 0.4522212 Vali Loss: 0.8430601 Test Loss: 0.4416375
+Validation loss decreased (0.848176 --> 0.843060).  Saving model ...
+Updating learning rate to 7.5e-05
+	iters: 100, epoch: 3 | loss: 0.3662301
+	speed: 0.0992s/iter; left time: 194.9222s
+	iters: 200, epoch: 3 | loss: 0.4559686
+	speed: 0.0387s/iter; left time: 72.1843s
+Epoch: 3 cost time: 9.596132755279541
+Epoch: 3, Steps: 258 | Train Loss: 0.4218807 Vali Loss: 0.8496947 Test Loss: 0.4435366
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.75e-05
+	iters: 100, epoch: 4 | loss: 0.4258811
+	speed: 0.0951s/iter; left time: 162.3755s
+	iters: 200, epoch: 4 | loss: 0.3399778
+	speed: 0.0381s/iter; left time: 61.2734s
+Epoch: 4 cost time: 9.807634830474854
+Epoch: 4, Steps: 258 | Train Loss: 0.4122418 Vali Loss: 0.8494111 Test Loss: 0.4432016
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.875e-05
+	iters: 100, epoch: 5 | loss: 0.4074657
+	speed: 0.0991s/iter; left time: 143.5248s
+	iters: 200, epoch: 5 | loss: 0.4376522
+	speed: 0.0391s/iter; left time: 52.7967s
+Epoch: 5 cost time: 9.995782375335693
+Epoch: 5, Steps: 258 | Train Loss: 0.4066673 Vali Loss: 0.8476342 Test Loss: 0.4555317
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : PCDformer_ETTh1_201_168_PCDformer_ETTh1_ftM_sl201_ll0_pl168_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_PCDformer_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2713
+test shape: (2713, 168, 7) (2713, 168, 7)
+test shape: (2713, 168, 7) (2713, 168, 7)
+mse:0.44127821922302246, mae:0.444830060005188
+avg_infer_ms_per_seq:0.322763, throughput_seq_per_sec:3098.248783
+
+============================================================
+Finished: 01_original_ETTh1_201_168
+End time: 2026-06-03 13:34:29
+============================================================

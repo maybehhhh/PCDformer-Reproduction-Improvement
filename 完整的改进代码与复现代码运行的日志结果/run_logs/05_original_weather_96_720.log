@@ -1,0 +1,86 @@
+============================================================
+Start: 05_original_weather_96_720
+Work dir: PCDformer-Autoformer-paper-aligned
+Log file: run_logs/05_original_weather_96_720.log
+Time: 2026-06-03 14:14:43
+============================================================
+python -u run.py --is_training 1 --root_path ./dataset/weather/ --data_path weather.csv --model_id PCDformer_weather_96_720 --model PCDformer --data custom --features M --seq_len 96 --label_len 0 --pred_len 720 --e_layers 2 --d_layers 1 --enc_in 21 --dec_in 21 --c_out 21 --d_model 512 --d_ff 2048 --n_heads 8 --moving_avg 25 --top_k 1 --dropout 0.01 --batch_size 256 --learning_rate 0.000009 --train_epochs 10 --patience 3 --des PCDformer --itr 1 --num_workers 0
+============================================================
+Args in experiment:
+Namespace(is_training=1, model_id='PCDformer_weather_96_720', model='PCDformer', data='custom', root_path='./dataset/weather/', data_path='weather.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=720, bucket_size=4, n_hashes=4, enc_in=21, dec_in=21, c_out=21, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, top_k=1, distil=True, dropout=0.01, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=10, batch_size=256, patience=3, learning_rate=9e-06, des='PCDformer', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3')
+Use GPU: cuda:0
+>>>>>>>start training : PCDformer_weather_96_720_PCDformer_custom_ftM_sl96_ll0_pl720_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_PCDformer_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36072
+val 4551
+test 9820
+	iters: 100, epoch: 1 | loss: 1.0072608
+	speed: 0.0833s/iter; left time: 108.4235s
+Epoch: 1 cost time: 10.730451583862305
+Epoch: 1, Steps: 140 | Train Loss: 1.1376159 Vali Loss: 0.7838280 Test Loss: 0.4745311
+Validation loss decreased (inf --> 0.783828).  Saving model ...
+Updating learning rate to 9e-06
+	iters: 100, epoch: 2 | loss: 0.7756677
+	speed: 0.1322s/iter; left time: 153.5012s
+Epoch: 2 cost time: 9.954642534255981
+Epoch: 2, Steps: 140 | Train Loss: 0.7804814 Vali Loss: 0.7056945 Test Loss: 0.3803724
+Validation loss decreased (0.783828 --> 0.705694).  Saving model ...
+Updating learning rate to 4.5e-06
+	iters: 100, epoch: 3 | loss: 0.7187144
+	speed: 0.1330s/iter; left time: 135.7983s
+Epoch: 3 cost time: 10.06612253189087
+Epoch: 3, Steps: 140 | Train Loss: 0.7115534 Vali Loss: 0.6867294 Test Loss: 0.3693042
+Validation loss decreased (0.705694 --> 0.686729).  Saving model ...
+Updating learning rate to 2.25e-06
+	iters: 100, epoch: 4 | loss: 0.7151620
+	speed: 0.1327s/iter; left time: 116.9197s
+Epoch: 4 cost time: 10.019770622253418
+Epoch: 4, Steps: 140 | Train Loss: 0.6912859 Vali Loss: 0.6801378 Test Loss: 0.3659041
+Validation loss decreased (0.686729 --> 0.680138).  Saving model ...
+Updating learning rate to 1.125e-06
+	iters: 100, epoch: 5 | loss: 0.7170743
+	speed: 0.1316s/iter; left time: 97.5060s
+Epoch: 5 cost time: 9.95289397239685
+Epoch: 5, Steps: 140 | Train Loss: 0.6825629 Vali Loss: 0.6775240 Test Loss: 0.3647245
+Validation loss decreased (0.680138 --> 0.677524).  Saving model ...
+Updating learning rate to 5.625e-07
+	iters: 100, epoch: 6 | loss: 0.6554590
+	speed: 0.1313s/iter; left time: 78.8853s
+Epoch: 6 cost time: 10.111252784729004
+Epoch: 6, Steps: 140 | Train Loss: 0.6785139 Vali Loss: 0.6769798 Test Loss: 0.3639423
+Validation loss decreased (0.677524 --> 0.676980).  Saving model ...
+Updating learning rate to 2.8125e-07
+	iters: 100, epoch: 7 | loss: 0.6664440
+	speed: 0.1356s/iter; left time: 62.5342s
+Epoch: 7 cost time: 10.254440546035767
+Epoch: 7, Steps: 140 | Train Loss: 0.6765347 Vali Loss: 0.6745986 Test Loss: 0.3634954
+Validation loss decreased (0.676980 --> 0.674599).  Saving model ...
+Updating learning rate to 1.40625e-07
+	iters: 100, epoch: 8 | loss: 0.6228073
+	speed: 0.1362s/iter; left time: 43.7268s
+Epoch: 8 cost time: 10.247503757476807
+Epoch: 8, Steps: 140 | Train Loss: 0.6754952 Vali Loss: 0.6755591 Test Loss: 0.3634201
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 7.03125e-08
+	iters: 100, epoch: 9 | loss: 0.6311498
+	speed: 0.1337s/iter; left time: 24.2038s
+Epoch: 9 cost time: 10.054024934768677
+Epoch: 9, Steps: 140 | Train Loss: 0.6753368 Vali Loss: 0.6721118 Test Loss: 0.3633306
+Validation loss decreased (0.674599 --> 0.672112).  Saving model ...
+Updating learning rate to 3.515625e-08
+	iters: 100, epoch: 10 | loss: 0.6559574
+	speed: 0.1319s/iter; left time: 5.4088s
+Epoch: 10 cost time: 10.059553623199463
+Epoch: 10, Steps: 140 | Train Loss: 0.6745743 Vali Loss: 0.6729198 Test Loss: 0.3632709
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.7578125e-08
+>>>>>>>testing : PCDformer_weather_96_720_PCDformer_custom_ftM_sl96_ll0_pl720_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_PCDformer_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 9820
+test shape: (9820, 720, 21) (9820, 720, 21)
+test shape: (9820, 720, 21) (9820, 720, 21)
+mse:0.3585468530654907, mae:0.3881254196166992
+avg_infer_ms_per_seq:0.068334, throughput_seq_per_sec:14634.082229
+
+============================================================
+Finished: 05_original_weather_96_720
+End time: 2026-06-03 14:17:08
+============================================================
